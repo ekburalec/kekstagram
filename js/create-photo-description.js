@@ -42,4 +42,4 @@ const createPhotoDescription = () => ({
 
 const photoDescription = Array.from({length: PICTURE_COUNT}, createPhotoDescription);
 
-export {photoDescription};
+export {photoDescription, PICTURE_COUNT};
