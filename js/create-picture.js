@@ -30,7 +30,7 @@ const createComments = () => ({
   name: getRandomArrayElement(COMMENT_NAMES),
 });
 
-const createPhotoDescription = () => ({
+const createPicture = () => ({
   id: [getRandomInteger(MIN_RANDOM_ID, MAX_RANDOM_ID)],
   url: `photos/${ [getRandomInteger(MIN_RANDOM_PHOTO, MAX_RANDOM_PHOTO)] }.jpg`,
   description: getRandomArrayElement(PHOTO_DESCRIPTION),
@@ -40,6 +40,6 @@ const createPhotoDescription = () => ({
     createComments),
 });
 
-const photoDescription = Array.from({length: PICTURE_COUNT}, createPhotoDescription);
+const getPictures = Array.from({length: PICTURE_COUNT}, createPicture);
 
-export {photoDescription, PICTURE_COUNT};
+export {getPictures, PICTURE_COUNT};

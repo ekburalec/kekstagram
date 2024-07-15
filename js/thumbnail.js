@@ -1,10 +1,10 @@
-import {photoDescription} from './create-photo-description';
+import {getPictures} from './create-picture';
 
 const picturesContainer = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const pictureFragment = new DocumentFragment();
 
-photoDescription.forEach(({ url, description, likes, comments }) => {
+getPictures.forEach(({ url, description, likes, comments }) => {
   const pictureElement = pictureTemplate.cloneNode(true);
 
   const pictureImg = pictureElement.querySelector('.picture__img');
