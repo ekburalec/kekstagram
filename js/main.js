@@ -1,5 +1,4 @@
-import './constants.js';
-import './util.js';
+import { getPictures } from './create-picture.js';
+import { generateThumbnails } from './thumbnail.js';
 
-import { photoDescription } from './create-photo-description.js';
-photoDescription.at();
+generateThumbnails(getPictures);
