@@ -1,16 +1,12 @@
 const PICTURE_COUNT = 25;
-const MIN_RANDOM_LIKES = 1;
-const MIN_RANDOM_ID = 1;
-const MAX_RANDOM_ID = 1;
-const MAX_RANDOM_LIKES = 25;
-const MIN_RANDOM_COMMENTS_ID = 1;
-const MAX_RANDOM_COMMENTS_ID = 30;
-const MIN_RANDOM_AVATAR = 1;
-const MAX_RANDOM_AVATAR = 6;
-const MIN_RANDOM_MESSAGE = 1;
-const MAX_RANDOM_MESSAGE = 2;
-const MIN_RANDOM_PHOTO = 1;
-const MAX_RANDOM_PHOTO = 25;
+const MIN_COUNT_LIKES = 1;
+const MAX_COUNT_LIKES = 25;
+const MIN_COUNT_COMMENTS_ID = 1;
+const MAX_COUNT_COMMENTS_ID = 30;
+const MIN_COUNT_AVATAR = 1;
+const MAX_COUNT_AVATAR = 6;
+const MIN_COUNT_MESSAGE = 1;
+const MAX_COUNT_MESSAGE = 2;
 
 const PHOTO_DESCRIPTION = ['Пляж не далеко от города', 'Указатель с надписью "GO TO THE BEACH"', 'Фото пляжа',
   'Девушка с фотоаппаратом на пляже', 'Суп с рисовыми фигурками', 'Машина на улице возле дома с откратыми дверями',
@@ -31,18 +27,14 @@ const COMMENT_NAMES = ['Артём', 'Иван', 'Екатерина', 'Анна
 
 export {
   PICTURE_COUNT,
-  MIN_RANDOM_ID,
-  MAX_RANDOM_ID,
-  MIN_RANDOM_LIKES,
-  MAX_RANDOM_LIKES,
-  MIN_RANDOM_COMMENTS_ID,
-  MAX_RANDOM_COMMENTS_ID,
-  MIN_RANDOM_AVATAR,
-  MAX_RANDOM_AVATAR,
-  MIN_RANDOM_MESSAGE,
-  MAX_RANDOM_MESSAGE,
-  MIN_RANDOM_PHOTO,
-  MAX_RANDOM_PHOTO,
+  MIN_COUNT_LIKES,
+  MAX_COUNT_LIKES,
+  MIN_COUNT_COMMENTS_ID,
+  MAX_COUNT_COMMENTS_ID,
+  MIN_COUNT_AVATAR,
+  MAX_COUNT_AVATAR,
+  MIN_COUNT_MESSAGE,
+  MAX_COUNT_MESSAGE,
   PHOTO_DESCRIPTION,
   COMMENT_NAMES,
   COMMENT_MESSAGE,
