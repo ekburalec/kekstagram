@@ -1,23 +1,26 @@
-import {getPictures} from './create-picture';
-
 const picturesContainer = document.querySelector('.pictures');
-const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
-const pictureFragment = new DocumentFragment();
+const thumbnailTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
-getPictures.forEach(({ url, description, likes, comments }) => {
-  const pictureElement = pictureTemplate.cloneNode(true);
+const createThumbnail = ({ url, description, likes, comments }) => {
+  const thumbnail = thumbnailTemplate.cloneNode(true);
 
-  const pictureImg = pictureElement.querySelector('.picture__img');
-  pictureImg.src = url;
-  pictureImg.alt = description;
+  thumbnail.querySelector('.picture__img').src = url;
+  thumbnail.querySelector('.picture__img').alt = description;
+  thumbnail.querySelector('.picture__likes').textContent = likes;
+  thumbnail.querySelector('.picture__comments').textContent = comments.length;
 
-  const pictureLikes = pictureElement.querySelector('.picture__likes');
-  pictureLikes.textContent = likes;
+  return thumbnail;
+};
 
-  const pictureComments = pictureElement.querySelector('.picture__comments');
-  pictureComments.textContent = comments.length;
+const generateThumbnails = (pictures) => {
+  const pictureFragment = new DocumentFragment();
 
-  pictureFragment.append(pictureElement);
-});
+  pictures.forEach ((picture) => {
+    const thumbnail = createThumbnail(picture);
+    pictureFragment.append(thumbnail);
+  });
 
-picturesContainer.append(pictureFragment);
+  picturesContainer.append(pictureFragment);
+};
+
+export { generateThumbnails };

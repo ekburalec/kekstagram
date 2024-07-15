@@ -2,26 +2,22 @@ import { getRandomInteger, createRandomIdFromRangeGenerator, getRandomArrayEleme
 
 import {
   PICTURE_COUNT,
-  MIN_COUNT_LIKES,
-  MAX_COUNT_LIKES,
-  MIN_COUNT_COMMENTS_ID,
-  MAX_COUNT_COMMENTS_ID,
-  MIN_COUNT_AVATAR,
-  MAX_COUNT_AVATAR,
-  MIN_COUNT_MESSAGE,
-  MAX_COUNT_MESSAGE,
+  LIKES_COUNT,
+  COMMENTS_ID,
+  AVATAR_COUNT,
+  MESSAGE_COUNT,
   PHOTO_DESCRIPTION,
-  COMMENT_NAMES,
   COMMENT_MESSAGE,
+  COMMENT_NAMES,
 } from './constants.js';
 
 const createMessage = () => Array.from(
-  {length: getRandomInteger(MIN_COUNT_MESSAGE, MAX_COUNT_MESSAGE)},
+  {length: getRandomInteger(...MESSAGE_COUNT)},
   () => getRandomArrayElement(COMMENT_MESSAGE));
 
 const createComments = () => ({
-  id: [createRandomIdFromRangeGenerator(MIN_COUNT_COMMENTS_ID, MAX_COUNT_COMMENTS_ID)],
-  avatar: `img/avatar-${getRandomInteger(MIN_COUNT_AVATAR, MAX_COUNT_AVATAR)}.svg`,
+  id: [createRandomIdFromRangeGenerator(...COMMENTS_ID)],
+  avatar: `img/avatar-${getRandomInteger(...AVATAR_COUNT)}.svg`,
   message: createMessage(),
   name: getRandomArrayElement(COMMENT_NAMES),
 });
@@ -30,9 +26,9 @@ const createPicture = (index) => ({
   id: index,
   url: `photos/${ index }.jpg`,
   description: getRandomArrayElement(PHOTO_DESCRIPTION),
-  likes: [getRandomInteger(MIN_COUNT_LIKES, MAX_COUNT_LIKES)],
+  likes: [getRandomInteger(...LIKES_COUNT)],
   comments: Array.from(
-    {length: getRandomInteger(MIN_COUNT_COMMENTS_ID, MAX_COUNT_COMMENTS_ID)},
+    {length: getRandomInteger(...COMMENTS_ID)},
     createComments),
 });
 
